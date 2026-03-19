@@ -29,17 +29,17 @@ const Navbar = () => {
             >
               <Code className="h-6 w-6 mr-2 text-indigo-600" strokeWidth={2.5} />
               <span className={`transition-colors duration-300 ${isScrolled ? 'text-indigo-900' : 'text-white'}`}>
-                Erkhem Consulting
+                Эрхэм Консалтинг
               </span>
             </a>
           </div>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex space-x-8">
-            {['Home', 'Services', 'Pricing', 'Contact'].map((item) => (
+            {['Нүүр', 'Тайлан', 'Зарууд'].map((item) => (
               <li key={item}>
                 <a
-                  href={`#${item.toLowerCase()}`}
+                  href={`#${item === 'Нүүр' ? 'home' : item === 'Тайлан' ? 'report' : 'listings'}`}
                   className={`transition-colors duration-300 hover:text-indigo-600 ${isScrolled ? 'text-gray-700' : 'text-white'
                     }`}
                 >
@@ -67,10 +67,10 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-4 space-y-1 bg-white rounded-lg mt-2 shadow-lg">
-              {['Home', 'Services', 'Pricing', 'Contact'].map((item) => (
+              {['Нүүр', 'Тайлан', 'Зарууд'].map((item) => (
                 <a
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  href={`#${item === 'Нүүр' ? 'home' : item === 'Тайлан' ? 'report' : 'listings'}`}
                   className="block px-3 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 rounded-md"
                   onClick={() => setIsOpen(false)}
                 >
