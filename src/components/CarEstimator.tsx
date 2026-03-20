@@ -4,6 +4,8 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
+  LineController,
+  ScatterController,
   BarElement,
   LineElement,
   PointElement,
@@ -14,7 +16,16 @@ import { sampleCars, type CarRecord } from '../data/sampleCars';
 import { buildStats, formatCurrency, formatNumber, getBellCurveRating, weightedAveragePriceByMileage } from '../utils/carAnalytics';
 import { supabase } from '../lib/supabaseClient';
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, Tooltip);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  LineController,
+  ScatterController,
+  BarElement,
+  LineElement,
+  PointElement,
+  Tooltip,
+);
 
 type Filters = {
   make: string;
